@@ -1,0 +1,30 @@
+/* === Animación para aparición suave de las cards === */
+@keyframes spin{
+    from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* === Animación de borde con gradiente en rotación === */
+@keyframes border-move {
+  0% {
+    background-position: 0% 50%;
+  }50%{
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-border-move {
+  background-size: 200% 200%;
+  animation: border-move 6s linear infinite;
+}

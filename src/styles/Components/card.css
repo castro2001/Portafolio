@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+.card{
+    @apply rounded-xl p-5 hover:scale-105 transition-all border-2
+     hover:border-blue-500 hover:shadow-2xl w-full min-w-[250px] 
+     /* group-hover:scale-[1.02]  */
+} 
+
+.card::after, .card::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+.card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
+.card{
+    @apply w-full min-w-[250px] relative p-5 rounded-xl 
+    group-hover:scale-[1.02] hover:scale-105 transition-all
+} 
+
+
+.card.dark{
+    @apply hover:shadow-blue-500/20 bg-gray-800/50 border-gray-700
+}
+.card.light{
+    @apply hover:shadow-blue-500/30  bg-gray-50 border-gray-200
+}
+
+
+.badge{
+    @apply px-4 pt-3 py-2 text-sm rounded-full  hover:scale-110 transition-transform cursor-pointer flex items-center
+}
+
+.badge.dark{
+    @apply bg-gray-900 text-blue-400 border border-blue-500/30
+}
+
+.badge.light{
+
+    @apply bg-blue-100 text-amber-800 border border-blue-300
+}
+
