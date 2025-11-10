@@ -1,23 +1,23 @@
 "use client"
-import { SectionGrid } from "@/src/Components/layout/SectionGrid";
-import { ICard, ICardProps } from "@/src/interfaces/ICard";
-import { Code2, ExternalLink } from "lucide-react";
 import { useTheme } from "next-themes";
+import {  ICardProps } from "@/src/interfaces/ICard";
+import { Code2, ExternalLink } from "lucide-react";
 
 export const Card = (props:ICardProps)=> {
     const {card} = props;
     const {theme,systemTheme} = useTheme();
     const currentTheme = theme === "system" ? systemTheme : theme;
     
-    console.log(card);
+  
     
      return (
     <div className="max-w-7xl mx-auto">
       <div className="grid md:grid-cols-2 gap-8 place-items-center">
         {card?.map((item) => (
-          <div
-            key={item.id}
-            className={`card relative rounded-xl p-5 transition-all hover:scale-105 group-hover:scale-[1.02] ${
+        <div    key={item.id} className="neon-border" style={{ '--neon-color' : currentTheme === "dark" ? item.gradientBorderDark : item.gradientBorderLight } as React.CSSProperties}>
+            <div
+         
+            className={`card  ${
               currentTheme === "dark"
                 ? "bg-gray-800/50 border border-gray-700 hover:shadow-blue-500/20"
                 : "bg-gray-50 border border-gray-200 hover:shadow-blue-500/30"
@@ -74,6 +74,7 @@ export const Card = (props:ICardProps)=> {
               </div>
             </section>
           </div>
+        </div>
         ))}
       </div>
     </div>

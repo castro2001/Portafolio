@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.blue-500{
+    @apply from-blue-500
+}
+
+.green-500{
+    @apply from-green-500
+}
+
+.purple-500{
+    @apply from-purple-500
+}
+
+.orange-500{
+    @apply from-orange-500
+}

@@ -1,42 +1,48 @@
 @import "tailwindcss";
+ .card{
+    @apply w-full min-w-[250px] relative p-5 rounded-xl z-1
+      transition-all
+}
 
-.card{
-    @apply rounded-xl p-5 hover:scale-105 transition-all border-2
-     hover:border-blue-500 hover:shadow-2xl w-full min-w-[250px] 
-     /* group-hover:scale-[1.02]  */
-} 
-
-.card::after, .card::before{
-  content: '';
-  position: absolute;
-  height: 100%;
+.neon-border {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
   width: 100%;
-  background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  z-index: -1;
-  padding: 3px;
-  border-radius: 10px;
-  animation: 3s spin linear infinite;
+  min-width:250px;
 }
-.card::before{
-  filter: blur(1.5rem);
-  opacity: 0.5;
+
+.neon-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--neon-color, #0ff) 50%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: moveBorder 2s linear infinite;
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: 2;
+  pointer-events: none;
 }
-@keyframes spin{
-  from{
-    --angle: 0deg;
+@keyframes moveBorder {
+  0% {
+    background-position: 0% 50%;
   }
-  to{
-    --angle: 360deg;
+  100% {
+    background-position: 200% 50%;
   }
 }
 
-.card{
-    @apply w-full min-w-[250px] relative p-5 rounded-xl 
-    group-hover:scale-[1.02] hover:scale-105 transition-all
-} 
 
 
 .card.dark{

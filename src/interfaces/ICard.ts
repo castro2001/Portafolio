@@ -11,6 +11,8 @@ interface IListCard{
 
 interface ICardStyle{
     gradient?:string; 
+    gradientBorderDark?:string;
+    gradientBorderLight?:string;
 }
 
 export interface ICard extends ICardTitle{

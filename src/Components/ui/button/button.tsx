@@ -14,9 +14,9 @@ export const ButtonUI = ()=>{
       title="Cambiar tema"
     >
       {currentTheme === "dark" ? (
-        <Sun className="text-yellow-400 w-5 h-5" />
+        <Sun className="text-yellow-400 w-5 h-5 cursor-pointer" />
       ) : (
-        <Moon className="text-gray-700 w-5 h-5" />
+        <Moon className="text-gray-50 w-5 h-5 cursor-pointer" />
       )}
     </button>
   );
