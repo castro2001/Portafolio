@@ -9,7 +9,7 @@ interface IListCard{
     item:string;
 }
 
-interface ICardStyle{
+export interface ICardStyle{
     gradient?:string; 
     gradientBorderDark?:string;
     gradientBorderLight?:string;
