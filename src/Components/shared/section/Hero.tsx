@@ -1,5 +1,6 @@
 import { useNavbarHook } from "@/src/hook/useNavbarHook";
 import { useThemesHook } from "@/src/hook/useThemesHook";
+import {PoppinsFont,openSansFont} from "@/src/fonts/fonts"
 import {  User } from "lucide-react";
 
 export const HeroComponent = ()=>{
@@ -12,11 +13,11 @@ export const HeroComponent = ()=>{
             <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 md:py-10 items-center relative z-10">
                 <div className={`space-y-6 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
                     <header className="space-y-2 2xl:space-y-6">
-                        <h1 className="text-6xl md:text-8xl font-bold">Full Stack</h1>
-                        <h2 className="text-6xl md:text-8xl font-bold bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text
-                        text-transparent animate-gradient">Developer</h2>
+                        <h1 className={`text-6xl md:text-8xl font-bold ${PoppinsFont.className}`}>Full Stack</h1>
+                        <h2 className={`text-6xl md:text-8xl font-bold bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text
+                        text-transparent animate-gradient ${PoppinsFont.className}`}>Developer</h2>
                     </header>
-                      <p className={`text-xl ${currentTheme ==="dark" ? 'text-gray-400' : 'text-gray-600'} max-w-lg`}>Creando experiencias web increíbles con Next.js y tecnologías modernas </p>
+                      <p className={`text-xl ${currentTheme ==="dark" ? 'text-gray-400' : 'text-gray-600'} ${openSansFont.className} max-w-lg`}>Creando experiencias web increíbles con Next.js y tecnologías modernas </p>
                 </div>
                 <div className={`relative ${isLoaded ? 'animate-fade-in' : 'opacity-0'} animation-delay-500`}>
                     <div className="relative w-full h-96 md:h-[450px]">

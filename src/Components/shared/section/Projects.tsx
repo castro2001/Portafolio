@@ -7,7 +7,7 @@ export const ProjectsComponent = ()=>{
     const {currentTheme} = useThemesHook();
 
     return(
-        <section id="projects" className={`lg:px-20 px-4 min-h-screen py-20  relative ${currentTheme ==="dark" ? 'bg-gray-900/50':'bg-white'} `}>
+        <section className={`lg:px-20 px-4 min-h-screen py-20  relative ${currentTheme ==="dark" ? 'bg-gray-900/50':'bg-white'} `}>
         <div className="max-w-7xl mx-auto lg:pt-0 pt-[30px]">
             <h2 className="lg:text-5xl text-[28px] capitalize font-bold mb-12 text-center">
         {/* {t.projects.title}  */}
@@ -17,9 +17,9 @@ export const ProjectsComponent = ()=>{
             skils
             </span>
         </h2>
-            <CardShared/>
         
         </div>
+        <CardShared/>
         </section>
     )
 

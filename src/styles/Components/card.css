@@ -4,6 +4,30 @@
       transition-all
 }
 
+.title-card{
+  @apply lg:text-[30px] text-[28px] text-left font-semibold
+}
+
+
+
+.title-card.dark .text-color.dark{
+  @apply text-gray-300
+}
+
+.title-card.light .text-color.light {
+  @apply text-gray-600
+}
+
+.paragraph-card{
+  text-align: justify;
+  @apply text-[16px] lg:text-[16px] leading-relaxed mt-2 mb-5
+}
+
+.badge-card{
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
 .neon-border {
   position: relative;
   border-radius: 20px;
@@ -34,6 +58,37 @@
   z-index: 2;
   pointer-events: none;
 }
+
+.neon-border-project {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+width: calc(5/12 * 100%)
+}
+
+.neon-border-project::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--neon-color, #0ff) 50%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: moveBorder 2s linear infinite;
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: 2;
+  pointer-events: none;
+}
+
 @keyframes moveBorder {
   0% {
     background-position: 0% 50%;

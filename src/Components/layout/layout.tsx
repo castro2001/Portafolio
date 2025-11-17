@@ -4,6 +4,7 @@ import { ProjectsComponent } from "../shared/section/Projects";
 import { SkillsComponent } from "../shared/section/Skills";
 import { ContactComponent } from "../shared/section/Contact";
 import { HeroComponent } from "../shared/section/Hero";
+import { TimelineComponent } from "../ui/TimeLine/TimeLine";
 
 export const Layout = ()=>{
     const {currentTheme} = useThemesHook();
@@ -12,7 +13,8 @@ export const Layout = ()=>{
     <main className={`min-h-screen transition-colors duration-500 ${currentTheme ==="dark" ? 'bg-gray-950 text-white' : 'bg-gray-50 text-gray-900'}`}>
         <NavbarLayout />
         <HeroComponent />
-        <ProjectsComponent />
+        <TimelineComponent />
+        {/* <ProjectsComponent /> */}
         <SkillsComponent />
         <ContactComponent />
         {/* <FooterLayout/> */}
